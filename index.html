@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-container">
+      <div class="calculator-screen">
+        <input type="text" id="display" disabled />
+      </div>
+      <div class="calculator-keys">
+        <button class="key" id="clear" onclick="clearAll()">C</button>
+        <button class="key" id="backspace" onclick="clearLastOne()">DEL</button>
+        <button class="key" id="divide" onclick="clicked('/')">/</button>
+        <button class="key" id="multiply" onclick="clicked('*')">*</button>
+        <button class="key" id="seven" onclick="clicked(7)">7</button>
+        <button class="key" id="eight" onclick="clicked(8)">8</button>
+        <button class="key" id="nine" onclick="clicked(9)">9</button>
+        <button class="key" id="subtract" onclick="clicked('-')">-</button>
+        <button class="key" id="four" onclick="clicked(4)">4</button>
+        <button class="key" id="five" onclick="clicked(5)">5</button>
+        <button class="key" id="six" onclick="clicked(6)">6</button>
+        <button class="key" id="add" onclick="clicked('+')">+</button>
+        <button class="key" id="one" onclick="clicked(1)">1</button>
+        <button class="key" id="two" onclick="clicked(2)">2</button>
+        <button class="key" id="three" onclick="clicked(3)">3</button>
+        <button class="key" id="equals" onclick="calculate()">=</button>
+        <button class="key" id="zero" onclick="clicked(0)">0</button>
+        <button class="key" id="decimal" onclick="clicked('.')">.</button>
+        <button class="key" id="decimal" onclick="clicked('%')">%</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- 
+
+JavaScript (script.js):
+
+
+const display = document.getElementById('display');
+const keys = document.querySelectorAll('.key');
+
+let currentValue = '';
+let previousValue = '';
+let operation = '';
+
+keys.forEach(key => {
+    key.addEventListener('click', () => {
+        const keyValue = key.textContent;
+
+        if (keyValue === 'C') {
+            currentValue = '';
+            previousValue = '';
+            operation = '';
+            display.value = '';
+        } else if (keyValue === 'DEL') {
+            currentValue = currentValue.slice(0, -1);
+            display.value = currentValue;
+        } else if (keyValue === '=') {
+            const result = eval(`${previousValue} ${operation} ${currentValue}`);
+            display.value = result;
+            previousValue = result;
+            currentValue = '';
+            operation = '';
+        } else if (keyValue === '+'
+        previousValue = currentValue;
+      currentValue = '';
+      operation = '+';
+      display.value = '+';
+    } else if (keyValue === '-') {
+      previousValue = currentValue;
+      currentValue = '';
+      operation = '-';
+      display.value = '-';
+    } else if (keyValue === '*') {
+      previousValue = currentValue;
+      currentValue = '';
+      operation = '*';
+      display.value = '*';
+    } else if (keyValue === '/') {
+      previousValue = currentValue;
+      currentValue = '';
+      operation = '/';
+      display.value = '/';
+    } else {
+      currentValue += keyValue;
+      display.value = currentValue;
+    }
+  });
+});
+
+
+             
+      
+
+ -->
